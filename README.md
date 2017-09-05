@@ -24,5 +24,5 @@ Here, image_editor is the main class.
 	python image_editor.py --data_path "D:/project/open_cv/data/images/inputs/green_circle.jpg" --save_dir "D:/projec/open_cv/data/save/images" --save_image "green_circle.jpg"
 
 All the args parameters are optional, if not given default parameters will be used.    
-The default save_dir is none.So, no image is saved
+The default save_dir is none.So, no image is saved if input argument is not provided.
 
