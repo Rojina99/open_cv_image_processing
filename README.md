@@ -10,7 +10,7 @@ Image processing program.
        
        -> Area and parameters like width, height, radius
 
-	Here, image_editor is the main class.
+Here, image_editor is the main class.
 
 	It accepts arguments as 
                         --data_path -> 'data path for specific image'
