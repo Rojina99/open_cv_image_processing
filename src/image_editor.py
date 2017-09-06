@@ -13,11 +13,13 @@ from src.utils import load_image, hsv_mask, find_contours, draw_contours, filter
 from src.utils import contour_avg_area
 from src.convex_hull import convex_Hull
 
+major, minor, _ = cv2.__version__.split(".")
+# print major, minor
 
 def main():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--data_path', type=str, default='D:/Pycharm PRoject/open_cv/data/images/inputs/green_circle.jpg',
+    parser.add_argument('--data_path', type=str, default=dir_path+'/data/images/inputs/green_circle.jpg',
                         help='data path for specific image')
     parser.add_argument('--save_dir', type=str, default=None,
                         help='directory to save output  images')

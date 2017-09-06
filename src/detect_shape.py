@@ -59,11 +59,11 @@ class ShapeDetector:
     def print_shape_parameters(self, shape):
         shap = shape[0]
         if shap=="rectangle" or shap=="square":
-            print("Shape: %s \n Area: %s \n Width: %s \n Height: %s"
+            print(" Shape: %s \n Area: %s \n Width: %s \n Height: %s"
                   %(shape[0], shape[1], shape[2], shape[3]))
         elif shap=="circle":
-            print("Shape:%s \n Center: %s \n Area: %s \n Radius: %s"
+            print(" Shape: %s \n Center: %s \n Area: %s \n Radius: %s"
                   %(shape[0], shape[1], shape[2], shape[3]))
         elif shap=="ellipse":
-            print("Shape:%s \n Center: %s \n Area: %s \n Major Axis: %s \n Minor Axis: %s"
+            print(" Shape: %s \n Center: %s \n Area: %s \n Major Axis: %s \n Minor Axis: %s"
                   %(shape[0], shape[1], shape[2], shape[3], shape[4]))

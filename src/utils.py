@@ -6,6 +6,8 @@ import sys
 dir_path, current_file = os.path.split(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(dir_path)
 
+major, minor, _ = cv2.__version__.split(".")
+
 """
 Helper functions to save, process and retrieve image
 """
@@ -27,8 +29,14 @@ def hsv_mask(image, color="Yellow"):
 
 def find_contours(mask):
     ret, threshold = cv2.threshold(mask, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-    _, contours, _ = cv2.findContours(threshold, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
-    return contours
+    # print threshold
+    if major is "3":
+        _, contours, _ = cv2.findContours(threshold, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
+        return contours
+    elif major is "2":
+        contours, _ = cv2.findContours(threshold, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
+        # print contours
+        return contours
 
 def center(contours):
     M = cv2.moments(contours)
