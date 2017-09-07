@@ -3,6 +3,7 @@ import cv2
 import os
 
 import sys
+
 dir_path, current_file = os.path.split(os.path.dirname(os.path.realpath(__file__)))
 sys.path.append(dir_path)
 
@@ -13,10 +14,12 @@ class convex_Hull():
     """
     class that returns the convex hull of countors in nearby format
     """
-    def find_if_close(self,cnt1, cnt2):
+
+    def find_if_close(self, cnt1, cnt2):
         '''
         :return: true if two contours falls within same distance range i.e 20
         '''
+
         def distance(x, y):
             return np.sqrt(np.sum((x - y) ** 2))
 
@@ -81,4 +84,3 @@ class convex_Hull():
         cont = np.vstack([contour_op])
         hull = cv2.convexHull(cont)
         return hull
-
